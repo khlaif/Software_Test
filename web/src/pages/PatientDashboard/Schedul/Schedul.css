@@ -1,0 +1,1140 @@
+:root {
+    --primary: #2563eb;
+    --primary-soft: #edf4ff;
+    --page-bg: #f3f6fb;
+    --white: #ffffff;
+    --text-main: #111827;
+    --text-soft: #6b7280;
+    --border: #d9e1ec;
+    --shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+
+    --success: #16a34a;
+    --success-bg: #ebf8ef;
+    --success-border: #bde5c8;
+
+    --pending-bg: #f3f4f6;
+    --pending-text: #6b7280;
+
+    --warning-bg: #fff5e8;
+    --warning-text: #c26b17;
+
+    --info-bg: #eef4ff;
+    --info-text: #3b82f6;
+
+    --radius-xl: 28px;
+    --radius-lg: 22px;
+    --radius-md: 16px;
+    --radius-pill: 999px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.schedul-page {
+    min-height: 100vh;
+    direction: rtl;
+    background: var(--page-bg);
+    color: var(--text-main);
+    font-family: "Cairo", sans-serif;
+}
+
+.schedul-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 50px 50px 50px;
+}
+
+.schedul-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
+    direction: rtl;
+}
+
+.schedul-header__top {
+    margin-bottom: 10px;
+}
+
+.schedul-header__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 700;
+    font-family: "Cairo", sans-serif;
+}
+
+.schedul-header__label img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.schedul-header__title {
+    margin: 0 0 8px;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: "Cairo", sans-serif;
+    line-height: 1.3;
+}
+
+.schedul-header__subtitle {
+    margin: 0;
+    color: var(--text-soft);
+    font-size: 16px;
+    line-height: 1.8;
+    font-family: "Cairo", sans-serif;
+}
+
+.schedul-header__content {
+    text-align: right;
+    min-width: 0;
+}
+
+.tele__back {
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 14px;
+    background: #fff;
+    color: #0f1b35;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Cairo", sans-serif;
+    cursor: pointer;
+    transition: 0.2s ease;
+    align-self: flex-start;
+    flex-shrink: 0;
+}
+
+.schedul-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 450px;
+    gap: 24px;
+    align-items: start;
+}
+
+.schedul-content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+}
+
+.schedul-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+}
+
+.schedul-sectionTitle h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.schedul-card {
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow);
+}
+
+.schedul-card--summary {
+    background: #eef4ff;
+    border-color: #c7d7fb;
+}
+
+.schedul-card__titleRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    margin-bottom: 18px;
+    color: #111827;
+    font-size: 16px;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.schedul-card__titleRow h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.schedul-card__titleRow img {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.schedul-summary__number {
+    margin-bottom: 12px;
+    color: var(--primary);
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+}
+
+.schedul-summary__text {
+    margin: 0;
+    color: var(--text-soft);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.schedul-instructions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.schedul-instruction {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 16px;
+    border-radius: var(--radius-md);
+}
+
+.schedul-instruction p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+.schedul-instruction__bullet {
+    flex-shrink: 0;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.schedul-instruction--warning {
+    background: var(--warning-bg);
+    color: var(--warning-text);
+}
+
+.schedul-instruction--info {
+    background: var(--info-bg);
+    color: var(--info-text);
+}
+
+.schedul-appointments {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.appointment-card {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    min-height: 150px;
+    background: var(--white);
+    border: 1px solid #e5e7eb;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.appointment-card__body {
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr);
+    grid-template-areas: "side info";
+    align-items: stretch;
+    gap: 24px;
+    height: 100%;
+    padding: 24px 32px;
+    direction: ltr;
+    background: #fff;
+}
+
+.appointment-card__timeBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 24px;
+    border-left: 1px solid #e5e7eb;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.appointment-date {
+    margin-bottom: 8px;
+    color: var(--text-soft);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.appointment-time {
+    color: var(--primary);
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.appointment-badge {
+    align-self: flex-start;
+    margin-right: auto;
+    margin-left: 0;
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.appointment-badge--confirmed {
+    background: #1db954;
+    color: white;
+}
+
+.appointment-badge--pending {
+    background: var(--pending-bg);
+    color: var(--pending-text);
+}
+
+.appointment-badge--suggested {
+    background: white;
+    color: #111827;
+    border: 1.5px solid #111827;
+}
+
+.appointment-side {
+    grid-area: side;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    direction: ltr;
+}
+
+.appointment-info {
+    grid-area: info;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: right;
+    direction: ltr;
+}
+
+.appointment-info__title {
+    margin: 0 0 8px;
+    color: #111827;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.appointment-info__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #6b7280;
+    font-size: 15px;
+    direction: rtl;
+    min-width: 0;
+    width: 100%;
+}
+
+.appointment-info__meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.appointment-info__meta h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    color: #111827;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.appointment-info__meta img {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.appointment-actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: auto;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: fit-content;
+    height: 42px;
+    padding: 0 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    direction: rtl;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: "Cairo", sans-serif;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: white;
+    color: #111827;
+    border: 1.5px solid #111827;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    background: var(--success);
+    color: white;
+    gap: 4px;
+    border: none;
+}
+
+.btn-outline img,
+.btn-primary img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.appointment-card--confirmed {
+    border-color: var(--success-border);
+}
+
+.appointment-card--confirmed .appointment-card__timeBox {
+    background: var(--success-bg);
+}
+
+.appointment-card--pending .appointment-card__timeBox {
+    background: #f9fafb;
+}
+
+.appointment-card--suggested .appointment-card__timeBox {
+    background: #fbfcff;
+}
+
+.schedul-modalOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 16px 20px;
+    background: rgba(15, 23, 42, 0.6);
+}
+
+.schedul-modal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 550px;
+    max-height: calc(100vh - 40px);
+    padding: 22px 20px 18px;
+    overflow-y: auto;
+    background: #f8fafc;
+    border-radius: 28px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.schedul-modal > *:not(.schedul-modal__close) {
+    width: calc(100% - 50px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.schedul-modal__close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: auto;
+    height: auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #444;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.schedul-modal__close:hover {
+    color: #000;
+}
+
+.schedul-modal__title {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+    color: #0f172a;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.schedul-modal__title img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+.schedul-modal__box {
+    padding: 16px;
+    margin-bottom: 14px;
+    border-radius: 18px;
+}
+
+.schedul-modal__box strong {
+    font-size: 20px;
+    font-weight: 900;
+    font-family: "Cairo", sans-serif;
+}
+
+.schedul-modal__box--current,
+.schedul-modal__box--location {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    background: #eef4ff;
+    border: 1px solid #dbe7ff;
+}
+
+.schedul-modal__box--green {
+    background: #eef9f0;
+    border: 1px solid #ccebd8;
+}
+
+.schedul-modal__box--warning {
+    background: #fff8e8;
+    border: 1px solid #f1dfb5;
+}
+
+.schedul-modal__box--location strong {
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Cairo", sans-serif;
+}
+
+.schedul-modal__box--location span {
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.schedul-modal__box--green strong {
+    color: #056f2c;
+}
+
+.schedul-modal__box--warning span {
+    color: #5f3802;
+    font-weight: 700;
+}
+
+.schedul-modal__box--warning ul {
+    margin: 0;
+    padding-right: 20px;
+}
+
+.schedul-modal__box--warning li {
+    margin-top: 5px;
+    margin-bottom: 8px;
+    color: #9a5a00;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Cairo", sans-serif;
+}
+
+.schedul-modal__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.schedul-modal__labelBlue {
+    display: block;
+    margin-bottom: 6px;
+    color: #2563eb;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.schedul-modal__labelGreen {
+    display: block;
+    margin-bottom: 6px;
+    color: #16a34a;
+    font-weight: 700;
+}
+
+.schedul-modal__input {
+    width: 100%;
+    height: 52px;
+    margin-bottom: 14px;
+    padding: 0 16px;
+    appearance: auto;
+    -webkit-appearance: auto;
+    background: var(--white);
+    color: var(--text-main);
+    border: 2px solid #2563eb;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Cairo", sans-serif;
+}
+
+.schedul-modal__input::-webkit-calendar-picker-indicator {
+    opacity: 1;
+    cursor: pointer;
+    filter: brightness(0);
+}
+
+.schedul-timeGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.schedul-timeBtn {
+    height: 48px;
+    background: #fff;
+    color: var(--text-main);
+    border: 2px solid #1e293b;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Cairo", sans-serif;
+    transition: 0.2s ease;
+}
+
+.schedul-timeBtn.active {
+    background: linear-gradient(135deg, #0f3d91, #2563eb, #3b82f6);
+    color: white;
+    border-color: #2563eb;
+}
+
+.schedul-modal__note {
+    padding: 14px;
+    margin-bottom: 16px;
+    background: #eef4ff;
+    border: 1px solid #dbe7ff;
+    border-radius: 18px;
+}
+
+.schedul-modal__note span {
+    display: block;
+    margin-bottom: 6px;
+    color: #2563eb;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.schedul-modal__note p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.schedul-modal__mainBtn,
+.schedul-modal__confirmBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 54px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.schedul-modal__mainBtn {
+    background: linear-gradient(135deg, #0f3d91, #2563eb, #3b82f6);
+    box-shadow: 0 7px 14px rgba(37, 99, 235, 0.35);
+}
+
+.schedul-modal__confirmBtn {
+    background: #16a34a;
+    box-shadow: 0 7px 14px rgba(22, 163, 74, 0.35);
+}
+
+.schedul-modal__close:focus,
+.schedul-modal__mainBtn:focus,
+.schedul-modal__confirmBtn:focus {
+    outline: none;
+}
+
+.schedul-modal__rowInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.schedul-modal__rowInfo span {
+    display: block;
+    margin-bottom: 8px;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.schedul-modal__rowInfo strong {
+    font-size: 18px;
+}
+
+.schedul-modal__rowInfo .blue {
+    color: #2563eb;
+}
+
+@media (max-width: 1400px) {
+    .schedul-container {
+        padding: 44px 40px 44px;
+    }
+
+    .schedul-layout {
+        grid-template-columns: minmax(0, 1fr) 400px;
+        gap: 20px;
+    }
+
+    .appointment-card__body {
+        padding: 22px 24px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .schedul-container {
+        padding: 38px 28px 38px;
+    }
+
+    .schedul-header__title {
+        font-size: 32px;
+    }
+
+    .schedul-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .schedul-sidebar {
+        order: 2;
+    }
+
+    .schedul-content {
+        order: 1;
+    }
+
+    .appointment-card {
+        grid-template-columns: 180px minmax(0, 1fr);
+    }
+
+    .appointment-card__body {
+        grid-template-columns: 150px minmax(0, 1fr);
+        padding: 20px 22px;
+    }
+}
+
+@media (max-width: 992px) {
+    .schedul-container {
+        padding: 32px 22px 32px;
+    }
+
+    .schedul-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .tele__back {
+        width: fit-content;
+    }
+
+    .schedul-card {
+        padding: 20px;
+        border-radius: 24px;
+    }
+
+    .schedul-sectionTitle h2 {
+        font-size: 20px;
+    }
+
+    .appointment-card {
+        grid-template-columns: 160px minmax(0, 1fr);
+        min-height: unset;
+    }
+
+    .appointment-card__body {
+        grid-template-columns: 140px minmax(0, 1fr);
+        gap: 18px;
+        padding: 18px 18px;
+    }
+
+    .appointment-card__timeBox {
+        padding: 18px 14px;
+    }
+
+    .appointment-time {
+        font-size: 22px;
+    }
+
+    .appointment-info__title {
+        font-size: 18px;
+    }
+
+    .appointment-actions {
+        flex-wrap: wrap;
+    }
+
+    .schedul-modal {
+        max-width: 520px;
+        padding: 20px 18px 16px;
+    }
+
+    .schedul-modal__title {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    .schedul-container {
+        padding: 24px 16px 24px;
+    }
+
+    .schedul-header__label {
+        font-size: 14px;
+    }
+
+    .schedul-header__title {
+        font-size: 28px;
+    }
+
+    .schedul-header__subtitle {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .schedul-card {
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .schedul-card__titleRow {
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+
+    .schedul-card__titleRow h3 {
+        font-size: 17px;
+    }
+
+    .schedul-summary__number {
+        font-size: 28px;
+    }
+
+    .appointment-card {
+        grid-template-columns: 1fr;
+    }
+
+    .appointment-card__timeBox {
+        order: -1;
+        padding: 16px;
+        border-left: none;
+        border-bottom: 1px solid #e5e7eb;
+        text-align: center;
+    }
+
+    .appointment-card__body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "side"
+            "info";
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .appointment-side {
+        gap: 14px;
+    }
+
+    .appointment-badge {
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    .appointment-info {
+        align-items: flex-end;
+    }
+
+    .appointment-info__title {
+        font-size: 20px;
+    }
+
+    .appointment-info__meta span {
+        font-size: 13px;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+    }
+
+    .appointment-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .schedul-modalOverlay {
+        padding: 12px;
+    }
+
+    .schedul-modal {
+        max-width: 100%;
+        max-height: calc(100vh - 24px);
+        border-radius: 24px;
+    }
+
+    .schedul-modal > *:not(.schedul-modal__close) {
+        width: calc(100% - 26px);
+    }
+
+    .schedul-modal__title {
+        gap: 10px;
+        font-size: 20px;
+        margin-bottom: 14px;
+    }
+
+    .schedul-modal__rowInfo {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .schedul-timeGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .schedul-modal__mainBtn,
+    .schedul-modal__confirmBtn {
+        height: 50px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .schedul-container {
+        padding: 18px 12px 18px;
+    }
+
+    .schedul-header {
+        margin-bottom: 22px;
+    }
+
+    .schedul-header__title {
+        font-size: 24px;
+    }
+
+    .schedul-header__subtitle {
+        font-size: 14px;
+    }
+
+    .tele__back {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 10px 14px;
+    }
+
+    .schedul-card {
+        padding: 16px 14px;
+        border-radius: 18px;
+    }
+
+    .schedul-card__titleRow h3 {
+        font-size: 16px;
+    }
+
+    .schedul-summary__number {
+        font-size: 26px;
+    }
+
+    .schedul-summary__text,
+    .schedul-instruction p {
+        font-size: 13px;
+    }
+
+    .appointment-card {
+        border-radius: 20px;
+    }
+
+    .appointment-card__timeBox {
+        padding: 14px 12px;
+    }
+
+    .appointment-date {
+        font-size: 13px;
+    }
+
+    .appointment-time {
+        font-size: 22px;
+    }
+
+    .appointment-info__title {
+        font-size: 18px;
+    }
+
+    .appointment-info__meta h2 {
+        font-size: 15px;
+    }
+
+    .appointment-info__meta span {
+        font-size: 12px;
+    }
+
+    .appointment-badge {
+        font-size: 9px;
+        padding: 6px 10px;
+    }
+
+    .btn {
+        height: 40px;
+        padding: 0 14px;
+        font-size: 11px;
+    }
+
+    .schedul-modal {
+        padding: 16px 14px 14px;
+        border-radius: 20px;
+    }
+
+    .schedul-modal > *:not(.schedul-modal__close) {
+        width: calc(100% - 12px);
+    }
+
+    .schedul-modal__close {
+        top: 12px;
+        right: 12px;
+        font-size: 26px;
+    }
+
+    .schedul-modal__title {
+        font-size: 18px;
+    }
+
+    .schedul-modal__title img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .schedul-modal__box {
+        padding: 14px;
+        border-radius: 16px;
+    }
+
+    .schedul-modal__box strong {
+        font-size: 17px;
+    }
+
+    .schedul-modal__label,
+    .schedul-modal__labelBlue,
+    .schedul-modal__labelGreen {
+        font-size: 14px;
+    }
+
+    .schedul-modal__input {
+        height: 48px;
+        font-size: 14px;
+    }
+
+    .schedul-timeGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .schedul-timeBtn {
+        height: 44px;
+        font-size: 14px;
+    }
+
+    .schedul-modal__note span,
+    .schedul-modal__note p,
+    .schedul-modal__box--warning li,
+    .schedul-modal__rowInfo span {
+        font-size: 13px;
+    }
+
+    .schedul-modal__rowInfo strong {
+        font-size: 16px;
+    }
+
+    .schedul-modal__mainBtn,
+    .schedul-modal__confirmBtn {
+        height: 48px;
+        font-size: 16px;
+        border-radius: 24px;
+    }
+}

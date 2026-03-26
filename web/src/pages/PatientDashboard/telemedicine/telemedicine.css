@@ -1,0 +1,1052 @@
+.tele{
+    min-height: 100vh;
+    padding: 40px;
+    direction: rtl;
+    font-family: "Cairo", sans-serif;
+    background: #f6f9ff;
+}
+
+.tele__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.tele__titleBox h1{
+    margin: 0;
+    color: #000;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.tele__titleBox p{
+    margin-top: 0;
+    color: rgb(125, 125, 125);
+    font-weight: 500;
+    background: none;
+    border: none;
+}
+
+.tele__tag{
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #2563eb;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.tele__back{
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 14px;
+    background: #fff;
+    color: #0f1b35;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Cairo", sans-serif;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.tele__back:hover{
+    background: linear-gradient(135deg, #0f3d91, #2563eb, #3b82f6);
+    color: #fff;
+}
+
+.tele__back:focus,
+.tele__join:focus,
+.ctrl:focus,
+.sendBtn:focus,
+.uploadBtn:focus{
+    outline: none;
+}
+
+.tele__grid{
+    display: grid;
+    grid-template-columns: 65% 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    padding-left: 5px;
+    background: none;
+    border: none;
+}
+
+
+.tele__video{
+    position: relative;
+    height: 540px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0f1b35;
+    color: #fff;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.tele__videoCenter{
+    text-align: center;
+}
+
+.tele__videoCenter h3{
+    margin: 0;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.tele__avatar{
+    background: none;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    border: 6px solid #2563eb;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tele__avatar img{
+    width: 70%;
+    height: 80%;
+    object-fit: contain;
+    fill: #2563eb;
+}
+
+.tele__avatar_pulse{
+    animation: avatarPulse 2s infinite ease-in-out;
+}
+
+@keyframes avatarPulse{
+    0%{
+        background: #04236d;
+    }
+    50%{
+        background: none;
+    }
+    100%{
+        background: #04236d;
+    }
+}
+
+.tele__controls{
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: rgba(6, 12, 28, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 22px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.ctrl:hover{
+    transform: scale(1.08);
+}
+
+.ctrl{
+    position: relative;
+    width: 54px;
+    height: 54px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.ctrl img{
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.ctrl--danger{
+    width: 58px;
+    height: 58px;
+    background: #ff4b4b;
+    border: none;
+    box-shadow: 0 6px 16px rgba(255, 75, 75, 0.28);
+}
+
+.ctrl--muted{
+    opacity: 0.9;
+}
+
+.ctrl:disabled{
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+.ctrl--speaking::before,
+.ctrl--speaking::after{
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 18px;
+    border: 2px solid rgba(37, 99, 235, 0.55);
+    animation: micPulse 1.2s infinite ease-out;
+}
+
+.ctrl--speaking::after{
+    inset: -12px;
+    border-color: rgba(37, 99, 235, 0.25);
+    animation-delay: 0.35s;
+}
+
+@keyframes micPulse{
+    0%{
+        transform: scale(0.92);
+        opacity: 0.85;
+    }
+    100%{
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+
+.tele__selfView{
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 3;
+    width: 200px;
+    height: 140px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(71, 85, 105, 0.72);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 22px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+.tele__selfVideo{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tele__selfAvatar{
+    width: 54px;
+    height: 54px;
+    opacity: 0.3;
+}
+
+.tele__selfAvatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tele__selfLabel{
+    position: absolute;
+    right: 12px;
+    bottom: 10px;
+    padding: 4px 10px;
+    color: #fff;
+    background: rgba(15, 23, 42, 0.9);
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+.tele__appointments{
+    max-width: 560px;
+    padding: 28px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.10);
+}
+
+.tele__appointments h3{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 22px;
+    color: #0f1b35;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.tele__appointments h3 img{
+    width: 22px;
+    height: 22px;
+}
+
+.tele__card{
+    margin-top: 18px;
+    padding: 24px;
+    background: #f8fafc;
+    border: none;
+    border-radius: 28px;
+    box-shadow: 0 6px 18px rgba(124, 124, 124, 0.7);
+    transition: 0.2s ease;
+}
+
+.tele__card:hover{
+    transform: scale(1.008);
+}
+
+.tele__cardTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.tele__doctorWrap{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    flex: 1;
+}
+
+.tele__doctorIconBox{
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef2f7;
+    border-radius: 18px;
+}
+
+.tele__doctorIconBox img{
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    opacity: 0.75;
+}
+
+.tele__doctorInfo{
+    text-align: right;
+}
+
+.tele__doctorInfo h4{
+    margin: 0;
+    color: #0f1b35;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.tele__doctorInfo span{
+    display: block;
+    margin-top: 4px;
+    color: #2563eb;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.tele__status{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.green{
+    color: #fff;
+    background: #22c55e;
+}
+
+.gray{
+    color: #6b7280;
+    background: #e5e7eb;
+}
+
+.pulse-status{
+    animation: statusPulse 2s infinite ease-in-out;
+}
+
+@keyframes statusPulse{
+    0%{
+        background: #22c55e;
+        color: #fff;
+    }
+    50%{
+        background: #d1d5db;
+        color: #fff;
+    }
+    100%{
+        background: #22c55e;
+        color: #fff;
+    }
+}
+
+.tele__time{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    padding-top: 14px;
+}
+
+.tele__time span{
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #64748b;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.tele__time span img{
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.tele__join{
+    width: 100%;
+    margin-top: 18px;
+    padding: 16px 18px;
+    background: #047e31;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 800;
+    box-shadow: 0 10px 22px rgba(37, 99, 235, 0.28);
+    transition: 0.25s ease;
+}
+
+.tele__join:hover{
+    transform: translateY(-1px);
+}
+
+.teleModal{
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.35);
+}
+
+.teleModal__card{
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    padding: 42px 36px 34px;
+    text-align: center;
+    background: #f2f4f7;
+    border-radius: 24px;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.18);
+}
+
+.teleModal__card--end{
+    max-width: 500px;
+}
+
+.teleModal__close{
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    border: none;
+    background: transparent;
+    color: #4b5563;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.teleModal__iconWrap{
+    width: 98px;
+    height: 98px;
+    margin: 0 auto 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #eaf7ee;
+}
+
+.teleModal__iconWrap--danger{
+    background: #f9e9e9;
+}
+
+.teleModal__icon{
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+
+.teleModal__title{
+    margin: 0 0 18px;
+    color: #020817;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.teleModal__text{
+    margin: 0 0 34px;
+    color: #74839a;
+    font-size: 16px;
+    line-height: 1.9;
+    font-weight: 500;
+}
+
+.teleModal__spec{
+    display: inline-block;
+    margin-top: 4px;
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+.teleModal__allow{
+    width: 100%;
+    height: 70px;
+    border: 2px solid #06b63f;
+    border-radius: 20px;
+    background: #06b63f;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.teleModal__allow:focus{
+    outline:none;
+}
+
+.teleModal__actions{
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.teleModal__endBtn,
+.teleModal__continueBtn{
+    min-width: 180px;
+    height: 68px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.teleModal__endBtn{
+    border: none;
+    background: #ff000f;
+    color: #fff;
+}
+
+.teleModal__continueBtn{
+    border: 2px solid #1f2937;
+    background: transparent;
+    color: #111827;
+}
+
+.tele__bottom{
+    display: grid;
+    grid-template-columns: 1fr 1fr 35%;
+    gap: 30px;
+    height: 350px;
+    margin-top: 28px;
+}
+
+.tele__files,
+.tele__chat{
+    min-height: 430px;
+    padding: 28px 28px 24px;
+    direction: rtl;
+    color: #0f172a;
+    background: #fff;
+    border-radius: 34px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.10);
+}
+
+.sectionHead{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.sectionHead h3{
+    margin: 0;
+    color: #0f172a;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.sectionHead img{
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.tele__files{
+    display: flex;
+    flex-direction: column;
+}
+
+.fileCard{
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 18px;
+    background: #fbfcfe;
+    border: 1px solid #fbfcfe;
+    border-radius: 22px;
+    transition: 0.2s ease;
+}
+
+.fileCard:hover{
+    background: rgba(186, 188, 190, 0.15);
+    border-color: rgba(186, 188, 190, 0.15);
+    transform: translateX(-3px);
+}
+
+.fileCard__icon{
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dbe7ff;
+    border-radius: 50%;
+}
+
+.fileCard__icon img{
+    width: 22px;
+    height: 22px;
+}
+
+.fileCard__content{
+    flex: 1;
+    text-align: right;
+}
+
+.fileCard__content h4{
+    margin: 0;
+    color: #0f172a;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.fileCard__content p{
+    margin: 4px 0 0;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.fileCard__arrow{
+    min-width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2563eb;
+    font-size: 34px;
+    line-height: 1;
+}
+
+.uploadBtn{
+    margin-top: 18px;
+    height: 58px;
+    border: 2px dashed #111827;
+    border-radius: 999px;
+    background: transparent;
+    color: #0f172a;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.uploadBtn:hover{
+    background: #f8fafc;
+    color: #2563eb;
+}
+
+.tele__chat{
+    display: flex;
+    flex-direction: column;
+}
+
+.chatBox{
+    flex: 1;
+    min-height: 255px;
+    margin-bottom: 20px;
+    padding: 18px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fbfcfe;
+    border: 2px dashed #d9e2f1;
+    border-radius: 26px;
+}
+
+.chatPlaceholder{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    text-align: center;
+}
+
+.chatPlaceholder img{
+    width: 42px;
+    height: 42px;
+    opacity: 0.35;
+}
+
+.chatPlaceholder p{
+    margin: 0;
+    color: #64748b;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.msg{
+    align-self: flex-start;
+    width: fit-content;
+    max-width: 75%;
+    margin-bottom: 10px;
+    padding: 10px 14px;
+    background: linear-gradient(135deg, #0f3d91, #2563eb, #3b82f6);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 14px;
+}
+
+.chatInput{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    direction: ltr;
+}
+
+.chatInput input{
+    flex: 1;
+    height: 58px;
+    padding: 0 22px;
+    border: none;
+    outline: none;
+    background: #f4f6fb;
+    color: #0f172a;
+    font-size: 17px;
+    direction: rtl;
+    border-radius: 999px;
+}
+
+.chatInput input::placeholder{
+    color: #9aa4b2;
+    font-weight: 600;
+}
+
+.sendBtn{
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f3d91, #2563eb, #3b82f6);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.28);
+}
+
+.sendBtn img{
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+@media (max-width: 1200px){
+    .tele{
+        padding: 28px;
+    }
+
+    .tele__grid{
+        grid-template-columns: 1fr;
+    }
+
+    .tele__appointments{
+        max-width: 100%;
+    }
+
+    .tele__video{
+        height: 500px;
+    }
+
+    .tele__bottom{
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+    }
+
+    .tele__files{
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 992px){
+    .tele{
+        padding: 22px;
+    }
+
+    .tele__header{
+        flex-direction: column;
+        gap: 18px;
+        align-items: flex-start;
+    }
+
+    .tele__titleBox h1{
+        font-size: 26px;
+    }
+
+    .tele__grid{
+        gap: 22px;
+        padding-top: 15px;
+    }
+
+    .tele__video{
+        height: 440px;
+    }
+
+    .tele__selfView{
+        width: 170px;
+        height: 120px;
+        top: 18px;
+        right: 18px;
+    }
+
+    .tele__bottom{
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .tele__files,
+    .tele__chat{
+        min-height: auto;
+    }
+
+    .teleModal__card{
+        padding: 34px 24px 26px;
+    }
+
+    .teleModal__title{
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 768px){
+    .tele{
+        padding: 16px;
+    }
+
+    .tele__titleBox h1{
+        font-size: 24px;
+    }
+
+    .tele__titleBox p{
+        font-size: 14px;
+    }
+
+    .tele__appointments{
+        padding: 18px;
+        border-radius: 24px;
+    }
+
+    .tele__card{
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .tele__doctorInfo h4{
+        font-size: 18px;
+    }
+
+    .tele__doctorInfo span{
+        font-size: 14px;
+    }
+
+    .tele__video{
+        height: 380px;
+        border-radius: 24px;
+    }
+
+    .tele__videoCenter h3{
+        font-size: 18px;
+    }
+
+    .tele__selfView{
+        width: 120px;
+        height: 92px;
+        top: 14px;
+        right: 14px;
+        border-radius: 16px;
+    }
+
+    .tele__selfLabel{
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+
+    .tele__controls{
+        gap: 10px;
+        padding: 10px 12px;
+        bottom: 18px;
+    }
+
+    .ctrl{
+        width: 48px;
+        height: 48px;
+    }
+
+    .ctrl--danger{
+        width: 52px;
+        height: 52px;
+    }
+
+    .ctrl img{
+        width: 16px;
+        height: 16px;
+    }
+
+    .tele__bottom{
+        margin-top: 18px;
+    }
+
+    .tele__files,
+    .tele__chat{
+        padding: 20px 18px;
+        border-radius: 24px;
+    }
+
+    .sectionHead h3{
+        font-size: 18px;
+    }
+
+    .chatInput input{
+        height: 52px;
+        font-size: 15px;
+    }
+
+    .sendBtn{
+        width: 52px;
+        height: 52px;
+    }
+
+    .teleModal__card{
+        border-radius: 20px;
+    }
+
+    .teleModal__iconWrap{
+        width: 82px;
+        height: 82px;
+    }
+
+    .teleModal__icon{
+        width: 36px;
+        height: 36px;
+    }
+
+    .teleModal__title{
+        font-size: 24px;
+    }
+
+    .teleModal__text{
+        font-size: 14px;
+    }
+
+    .teleModal__allow,
+    .teleModal__endBtn,
+    .teleModal__continueBtn{
+        height: 58px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px){
+    .tele__doctorWrap{
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .tele__status{
+        margin-right: 0;
+    }
+
+    .tele__time{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tele__join{
+        font-size: 15px;
+        padding: 14px 16px;
+    }
+
+    .tele__video{
+        height: 340px;
+    }
+
+    .tele__selfView{
+        width: 105px;
+        height: 82px;
+    }
+
+    .tele__controls{
+        border-radius: 18px;
+    }
+
+    .teleModal__actions{
+        flex-direction: column;
+    }
+
+    .teleModal__endBtn,
+    .teleModal__continueBtn{
+        width: 100%;
+        min-width: unset;
+    }
+
+    .chatInput{
+        gap: 10px;
+    }
+}

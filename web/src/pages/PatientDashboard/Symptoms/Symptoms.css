@@ -1,0 +1,510 @@
+:root{
+    --bg1:#f6f9ff;
+    --bg2:#eef3ff;
+    --text:#0f172a;
+    --muted:#64748b;
+    --card:#ffffff;
+    --line:rgba(15,23,42,.08);
+    --shadow:0 24px 60px rgba(2,6,23,.12);
+    --shadow2:0 14px 34px rgba(2,6,23,.08);
+    --warnBg:#fff7e6;
+    --warnText:#9a5a00;
+    --primary:#2563eb;
+    --primary2:#3b82f6;
+}
+
+.symp{
+    width:100%;
+    min-height:100vh;
+    background:
+    radial-gradient(1200px 600px at 20% 10%, var(--bg2), transparent 60%),
+    radial-gradient(900px 500px at 80% 20%, var(--bg2), transparent 55%),
+    linear-gradient(180deg, var(--bg1), #ffffff);
+    color:var(--text);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:42px 18px 70px;
+    font-family:system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans Arabic", sans-serif;
+    box-sizing:border-box;
+}
+
+.symp *,
+.symp *::before,
+.symp *::after{
+    box-sizing:border-box;
+}
+
+.symp__header{
+    width:100%;
+    max-width:860px;
+    text-align:center;
+    margin-bottom:26px;
+    padding-inline:12px;
+}
+
+.symp__logoWrap{
+    width:74px;
+    height:74px;
+    margin:0 auto 14px;
+    display:grid;
+    place-items:center;
+}
+
+.symp__logoPulse{
+    width:64px;
+    height:64px;
+    border-radius:18px;
+    background:linear-gradient(135deg, #0f3d91, #2563eb, #3b82f6);
+    box-shadow:0 18px 42px rgba(47,111,237,.28);
+    display:grid;
+    place-items:center;
+    animation:brainPulse 2.2s ease-in-out infinite;
+    transform-origin:center;
+}
+
+.symp__logo{
+    width:34px;
+    height:34px;
+    object-fit:contain;
+}
+
+@keyframes brainPulse{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.12);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .symp__logoPulse{
+        animation:none;
+    }
+}
+
+.symp__title{
+    font-size:clamp(30px, 5vw, 44px);
+    line-height:1.1;
+    margin:0 0 10px;
+    font-weight:900;
+    letter-spacing:-0.5px;
+}
+
+.symp__subtitle{
+    margin:0 auto;
+    color:var(--muted);
+    font-size:15.5px;
+    line-height:1.8;
+    max-width:720px;
+    direction:rtl;
+}
+
+.symp__brand{
+    font-weight:800;
+    color:#2563eb;
+}
+
+.symp__main{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    padding-inline:12px;
+}
+
+.sympCard{
+    width:100%;
+    max-width:700px;
+    min-height:700px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:28px;
+    box-shadow:7px 5px 17px 5px rgb(165, 163, 163);
+    padding:26px 24px 22px;
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.sympCard__head{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    margin-bottom:14px;
+}
+
+.sympCard__title{
+    margin:0;
+    font-size:18px;
+    font-weight:900;
+    padding-right:10px;
+}
+
+.sympCard__icon{
+    width:26px;
+    height:26px;
+    display:grid;
+    place-items:center;
+    border-radius:9px;
+    border:1px solid var(--card);
+    background:var(--card);
+    font-weight:900;
+    flex-shrink:0;
+}
+
+.sympCard__box{
+    background:#fbfdff;
+    border:1px solid var(--card);
+    border-radius:20px;
+    padding:14px;
+    box-shadow:0 24px 40px rgb(214, 212, 212);
+    transition:border-color 0.2s ease;
+}
+
+.sympCard__box:focus-within{
+    border:1px solid #2563eb;
+}
+
+.sympCard__textarea{
+    width:100%;
+    min-height:118px;
+    border:1px solid transparent;
+    outline:none;
+    resize:vertical;
+    background:transparent;
+    font-size:14.5px;
+    line-height:1.8;
+    color:var(--text);
+    direction:rtl;
+    text-align:right;
+    unicode-bidi:plaintext;
+    font-family:inherit;
+}
+
+.sympCard__textarea::placeholder{
+    color:rgba(100,116,139,.75);
+}
+
+.sympCard__quickRow{
+    margin-top:16px;
+}
+
+.sympCard__quickLabel{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:8px;
+    color:rgba(100,116,139,.9);
+    font-weight:800;
+    font-size:13px;
+    margin-bottom:12px;
+}
+
+.sympCard__spark img{
+    width:20px;
+    height:20px;
+}
+
+.sympCard__chips{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:12px;
+    direction:rtl;
+}
+
+.sympChip{
+    width:100%;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:10px 18px;
+    border-radius:14px;
+    border:1px solid rgba(165, 163, 163, 0.5);
+    background:#ffffff;
+    box-shadow:0 7px 13px rgb(165, 163, 163);
+    cursor:pointer;
+    font-weight:800;
+    color:#0f172a;
+    transition:transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+    text-align:center;
+    min-height:48px;
+}
+
+.sympChip:hover{
+    transform:translateY(-1px);
+    box-shadow:0 14px 28px rgba(2,6,23,.09);
+}
+
+.sympChip:hover .sympChip__plus{
+    transform:rotate(90deg);
+}
+
+.sympChip__plus{
+    display:inline-block;
+    transition:transform 0.10s ease;
+    flex-shrink:0;
+}
+
+.sympChip:focus{
+    outline:none;
+}
+
+.sympChip.is-active{
+    border-color:rgba(59,130,246,.55);
+    box-shadow:0 16px 34px rgba(59,130,246,.18);
+}
+
+.sympBtn{
+    margin:18px auto 0;
+    width:min(660px, 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    padding:18px;
+    border-radius:22px;
+    border:none;
+    cursor:pointer;
+    font-weight:900;
+    font-size:20px;
+    color:#ffffff;
+    background:linear-gradient(180deg, var(--primary), var(--primary2));
+    box-shadow:0 20px 46px rgba(126,166,255,.35);
+    transition:transform 170ms ease, box-shadow 170ms ease;
+    text-align:center;
+}
+
+.sympBtn.is-disabled,
+.sympBtn:disabled{
+    box-shadow:none;
+    cursor:not-allowed;
+    opacity:.85;
+    transform:none;
+}
+
+.sympBtn.is-active{
+    background:linear-gradient(135deg, #0f3d91, #2563eb, #3b82f6);
+    box-shadow:0 20px 46px rgba(37,99,235,.28);
+}
+
+.sympBtn.is-active:hover{
+    transform:translateY(-1px);
+    box-shadow:0 26px 58px rgba(126,166,255,.42);
+}
+
+.sympBtn__icon{
+    font-size:18px;
+    opacity:.95;
+}
+
+.spin img{
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.sympBtn.is-processing{
+    background:gray;
+    box-shadow:0 20px 46px rgba(14,165,233,.35);
+    direction:rtl;
+}
+
+.sympBtn.is-processing:hover{
+    transform:none;
+}
+
+.sympAlert{
+    margin:18px auto 0;
+    background:var(--warnBg);
+    border:1px solid rgba(250,204,21,.35);
+    border-radius:18px;
+    padding:14px 16px;
+}
+
+.sympAlert__top{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:10px;
+    color:var(--warnText);
+}
+
+.sympAlert__dot{
+    width:22px;
+    height:22px;
+    border-radius:999px;
+    display:grid;
+    place-items:center;
+    font-weight:900;
+    flex-shrink:0;
+}
+
+.sympAlert__text{
+    margin:8px 0 0;
+    color:#9a5a00e6;
+    line-height:1.8;
+    font-size:13.5px;
+    text-align:right;
+    direction:rtl;
+}
+
+@media (max-width: 992px){
+    .symp{
+        padding:34px 16px 56px;
+    }
+
+    .sympCard{
+        max-width:640px;
+        min-height:auto;
+        padding:24px 20px;
+        border-radius:24px;
+    }
+
+    .sympCard__chips{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px){
+    .symp{
+        padding:28px 14px 48px;
+    }
+
+    .symp__header{
+        margin-bottom:20px;
+    }
+
+    .symp__subtitle{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+    .sympCard{
+        padding:20px 18px;
+        border-radius:22px;
+        gap:20px;
+    }
+
+    .sympCard__title{
+        font-size:17px;
+    }
+
+    .sympCard__textarea{
+        font-size:14px;
+    }
+
+    .sympBtn{
+        font-size:18px;
+        padding:16px;
+        border-radius:18px;
+    }
+}
+
+@media (max-width: 640px){
+    .symp__title{
+        font-size:34px;
+    }
+
+    .symp__logoWrap{
+        width:68px;
+        height:68px;
+    }
+
+    .symp__logoPulse{
+        width:58px;
+        height:58px;
+        border-radius:16px;
+    }
+
+    .symp__logo{
+        width:30px;
+        height:30px;
+    }
+
+    .sympCard{
+        padding:18px 14px 16px;
+        border-radius:20px;
+        box-shadow:0 10px 24px rgba(2,6,23,.12);
+    }
+
+    .sympCard__head{
+        margin-bottom:8px;
+    }
+
+    .sympCard__box{
+        padding:12px;
+        border-radius:16px;
+        box-shadow:0 12px 24px rgba(2,6,23,.08);
+    }
+
+    .sympCard__chips{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        gap:10px;
+    }
+
+    .sympChip{
+        padding:10px 12px;
+        font-size:13px;
+        border-radius:12px;
+        min-height:44px;
+    }
+
+    .sympBtn{
+        font-size:17px;
+        padding:15px 14px;
+        border-radius:16px;
+        gap:10px;
+    }
+
+    .sympAlert{
+        border-radius:16px;
+        padding:12px 14px;
+    }
+
+    .sympAlert__text{
+        font-size:13px;
+        line-height:1.7;
+    }
+}
+
+@media (max-width: 420px){
+    .symp{
+        padding:22px 10px 40px;
+    }
+
+    .symp__title{
+        font-size:28px;
+    }
+
+    .symp__subtitle{
+        font-size:13.5px;
+    }
+
+    .sympCard{
+        padding:16px 12px 14px;
+    }
+
+    .sympCard__chips{
+        grid-template-columns:1fr;
+    }
+
+    .sympChip{
+        width:100%;
+    }
+
+    .sympBtn{
+        font-size:16px;
+    }
+}

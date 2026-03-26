@@ -1,0 +1,868 @@
+.lab-report-page {
+    direction: rtl;
+    padding: 32px 24px 40px;
+    background: #eef3f8;
+    min-height: 100vh;
+}
+
+.lab-report-shell {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+}
+
+.lab-report-container {
+    width: min(900px, 100%);
+    margin: 12px auto 0;
+    background: #f8fafc;
+    border-radius: 36px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+}
+
+.lab-report-header {
+    background: linear-gradient(135deg, #0f3d91, #2563eb, #3b82f6);
+    padding: 34px 40px 40px;
+}
+
+.lab-report-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+    margin-right: 6px;
+    background: transparent;
+    border: none;
+    color: #2563eb;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: "Cairo", sans-serif;
+    padding: 0;
+}
+
+.lab-report-back-btn img {
+    width: 18px;
+    height: 18px;
+}
+
+.lab-report-back-btn:focus {
+    outline: none;
+}
+
+.lab-report-title-wrap h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 32px;
+    font-weight: 900;
+    font-family: "Cairo", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.lab-report-title-wrap p {
+    margin: 10px 0 0;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 16px;
+    font-family: "Cairo", sans-serif;
+    font-weight: 600;
+}
+
+.lab-report-body {
+    padding: 34px 42px 40px;
+}
+
+.report-section {
+    margin-bottom: 34px;
+    padding: 0 0 28px;
+    border-bottom: 1px solid #dbe4f0;
+}
+
+.report-section:last-child {
+    margin-bottom: 0;
+}
+
+.report-section-title {
+    margin: 0 0 20px;
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Cairo", sans-serif;
+}
+
+.report-info-grid {
+    display: grid;
+    gap: 18px;
+}
+
+.report-info-grid.two-cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.report-info-grid.three-cols {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.report-info-card {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+    padding: 24px;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.report-info-card span {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 10px;
+    font-family: "Cairo", sans-serif;
+    font-weight: 700;
+}
+
+.report-info-card strong {
+    font-size: 18px;
+    color: #0f172a;
+    font-family: "Cairo", sans-serif;
+    font-weight: 900;
+    line-height: 1.4;
+}
+
+.text_color span {
+    color: #011c55;
+}
+
+.text_color strong {
+    color: #2563eb;
+}
+
+.text_status strong {
+    border-radius: 999px;
+    background: #16a34a;
+    color: white;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 5px 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 78px;
+}
+
+.report-results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.report-result-card {
+    border-radius: 24px;
+    padding: 24px 26px;
+    border: 2px solid transparent;
+}
+
+.report-result-card.normal {
+    background: #effcf4;
+    border-color: #98e2b3;
+}
+
+.report-result-card.warning {
+    background: #fff9eb;
+    border-color: #f4cc67;
+}
+
+.report-result-card.critical {
+    background: #fff1f2;
+    border-color: #fda4af;
+}
+
+.report-result-card.pending {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.report-result-topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.report-result-topline h3 {
+    margin: 0;
+    font-size: 28px;
+    color: #0f172a;
+    font-weight: 900;
+    font-family: "Cairo", sans-serif;
+}
+
+.report-badge {
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 800;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.report-badge.normal {
+    background: #16a34a;
+}
+
+.report-badge.warning {
+    background: #ea7a00;
+}
+
+.report-badge.critical {
+    background: #dc2626;
+}
+
+.report-badge.pending {
+    background: #64748b;
+}
+
+.report-result-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.report-result-icon {
+    font-size: 52px;
+    font-weight: 900;
+    color: #0f172a;
+    min-width: 80px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.report-result-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.report-result-meta {
+    display: flex;
+    justify-content: flex-start;
+    gap: 70px;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.report-result-meta div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.report-result-meta span {
+    color: #64748b;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: "Cairo", sans-serif;
+}
+
+.report-result-meta strong {
+    font-size: 22px;
+    color: #0f172a;
+    font-weight: 900;
+    font-family: "Cairo", sans-serif;
+}
+
+.report-notes-box {
+    background: #eef5ff;
+    border: 1px solid #cfe0ff;
+    border-radius: 24px;
+    padding: 24px 26px;
+}
+
+.report-notes-box ul {
+    margin: 0;
+    padding-right: 20px;
+}
+
+.report-notes-box li,
+.report-notes-box p {
+    color: #1e3a8a;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0 0 10px;
+    font-weight: 500;
+    font-family: "Cairo", sans-serif;
+}
+
+.report-recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.report-recommendation-card {
+    border-radius: 24px;
+    padding: 24px 26px;
+    min-height: 180px;
+}
+
+.report-recommendation-card.green {
+    background: #effcf4;
+    border: 1px solid #b7ebc6;
+    color: #01681e;
+}
+
+.report-recommendation-card.blue {
+    background: #eef5ff;
+    border: 1px solid #cfe0ff;
+    color: #2563eb;
+}
+
+.blue {
+    color: #2563eb !important;
+}
+
+.report-recommendation-card h3 {
+    font-family: "Cairo", sans-serif;
+    margin: 0 0 16px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.report-recommendation-card ul {
+    margin: 0;
+    padding-right: 18px;
+}
+
+.report-recommendation-card li,
+.report-recommendation-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0 0 8px;
+    color: #01681e;
+    font-family: "Cairo", sans-serif;
+}
+
+.report-footer-signature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 38px;
+    align-items: start;
+    direction: rtl;
+}
+
+.report-sign-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.report-sign-box span {
+    display: inline-block;
+    position: relative;
+    color: #6b7c93;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-family: "Cairo", sans-serif;
+    padding-bottom: 7px;
+}
+
+.report-sign-box strong {
+    display: block;
+    font-size: 17px;
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: 8px;
+    font-family: "Cairo", sans-serif;
+}
+
+.report-sign-box p {
+    margin: 0 0 6px;
+    color: #6b7c93;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: "Cairo", sans-serif;
+}
+
+.report-sign-box-doctor {
+    align-items: flex-start;
+    text-align: right;
+}
+
+.report-sign-box-date {
+    text-align: right;
+    align-items: flex-start;
+}
+
+.report-sign-line {
+    width: 92%;
+    height: 2px;
+    background: #d0d7e2;
+    margin-bottom: 15px;
+}
+
+.report-sign-box-doctor .report-sign-line,
+.report-sign-box-date .report-sign-line {
+    align-self: stretch;
+}
+
+.report-actions {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.primary-btn,
+.outline-btn,
+.secondary-btn {
+    height: 58px;
+    border-radius: 18px;
+    padding: 0 28px;
+    font-size: 20px;
+    font-weight: 900;
+    cursor: pointer;
+    font-family: "Cairo", sans-serif;
+}
+
+.primary-btn:focus,
+.outline-btn:focus,
+.secondary-btn:focus{
+    outline: none;
+}
+
+.primary-btn {
+    border: none;
+    background: linear-gradient(135deg, #0f3d91, #2563eb, #3b82f6);
+    color: #fff;
+}
+
+.outline-btn {
+    border: 2px solid #2563eb;
+    background: #fff;
+    color: #0f172a;
+}
+
+.secondary-btn {
+    border: 2px solid #0f172a;
+    background: #fff;
+    color: #0f172a;
+}
+
+.report-empty-state,
+.lab-report-empty {
+    max-width: 900px;
+    margin: 100px auto;
+    background: #fff;
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.lab-report-empty button {
+    margin-top: 16px;
+    border: none;
+    background: linear-gradient(135deg, #0f3d91, #2563eb, #3b82f6);
+    color: white;
+    border-radius: 12px;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-family: "Cairo", sans-serif;
+}
+
+
+@media (max-width: 992px) {
+    .lab-report-page {
+        padding: 24px 18px 32px;
+    }
+
+    .lab-report-container {
+        width: 100%;
+        border-radius: 28px;
+        margin-top: 10px;
+    }
+
+    .lab-report-header {
+        padding: 28px 28px 32px;
+    }
+
+    .lab-report-body {
+        padding: 28px 28px 32px;
+    }
+
+    .report-section-title {
+        font-size: 22px;
+    }
+
+    .report-result-topline h3 {
+        font-size: 24px;
+    }
+
+    .report-result-meta {
+        gap: 32px;
+    }
+
+    .primary-btn,
+    .outline-btn,
+    .secondary-btn {
+        font-size: 18px;
+        height: 54px;
+    }
+}
+
+@media (max-width: 768px) {
+    .lab-report-page {
+        padding: 20px 14px 28px;
+    }
+
+    .lab-report-shell {
+        width: 100%;
+    }
+
+    .lab-report-back-btn {
+        margin-bottom: 14px;
+        margin-right: 2px;
+        font-size: 15px;
+    }
+
+    .lab-report-container {
+        border-radius: 24px;
+    }
+
+    .lab-report-header {
+        padding: 24px 22px 28px;
+    }
+
+    .lab-report-title-wrap h1 {
+        font-size: 26px;
+        flex-wrap: wrap;
+        line-height: 1.4;
+    }
+
+    .lab-report-title-wrap p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .lab-report-body {
+        padding: 24px 22px 28px;
+    }
+
+    .report-section {
+        margin-bottom: 26px;
+        padding-bottom: 22px;
+    }
+
+    .report-section-title {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .report-info-grid.two-cols,
+    .report-info-grid.three-cols,
+    .report-recommendations-grid,
+    .report-footer-signature {
+        grid-template-columns: 1fr;
+    }
+
+    .report-info-card {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .report-result-card {
+        padding: 20px;
+    }
+
+    .report-result-topline {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 16px;
+    }
+
+    .report-result-content {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    .report-result-meta {
+        width: 100%;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    .report-result-icon {
+        min-width: 0;
+    }
+
+    .report-sign-line {
+        width: 100%;
+    }
+
+    .report-actions {
+        gap: 12px;
+        margin-top: 16px;
+    }
+
+    .primary-btn,
+    .outline-btn,
+    .secondary-btn {
+        width: 100%;
+        font-size: 17px;
+        height: 52px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lab-report-page {
+        padding: 16px 10px 24px;
+    }
+
+    .lab-report-back-btn {
+        font-size: 14px;
+        gap: 6px;
+    }
+
+    .lab-report-back-btn img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .lab-report-container {
+        border-radius: 20px;
+    }
+
+    .lab-report-header {
+        padding: 20px 16px 24px;
+    }
+
+    .lab-report-title-wrap h1 {
+        font-size: 22px;
+    }
+
+    .lab-report-title-wrap p {
+        font-size: 14px;
+        margin-top: 8px;
+    }
+
+    .lab-report-body {
+        padding: 20px 16px 24px;
+    }
+
+    .report-section-title {
+        font-size: 18px;
+    }
+
+    .report-info-card {
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .report-info-card strong {
+        font-size: 16px;
+    }
+
+    .report-result-card {
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .report-result-topline h3 {
+        font-size: 20px;
+    }
+
+    .report-badge {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .report-result-meta {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .report-result-meta strong {
+        font-size: 18px;
+    }
+
+    .report-result-icon img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .report-notes-box,
+    .report-recommendation-card {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .report-notes-box li,
+    .report-notes-box p,
+    .report-recommendation-card li,
+    .report-recommendation-card p {
+        font-size: 14px;
+    }
+
+    .report-sign-box strong {
+        font-size: 16px;
+    }
+
+    .report-sign-box p {
+        font-size: 13px;
+    }
+
+    .primary-btn,
+    .outline-btn,
+    .secondary-btn {
+        font-size: 16px;
+        height: 48px;
+        border-radius: 14px;
+        padding: 0 18px;
+    }
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 10mm;
+    }
+
+    html,
+    body {
+        background: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    body * {
+        visibility: hidden;
+    }
+
+    .lab-report-container,
+    .lab-report-container * {
+        visibility: visible;
+    }
+
+    .lab-report-page {
+        background: #ffffff !important;
+        padding: 0 !important;
+        min-height: auto !important;
+    }
+
+    .lab-report-shell {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .lab-report-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+        background: #ffffff !important;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .lab-report-header {
+        padding: 18px 20px 22px !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .lab-report-body {
+        padding: 20px !important;
+    }
+
+    .report-section {
+        margin-bottom: 20px !important;
+        padding-bottom: 16px !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .report-section-title {
+        font-size: 18px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .report-info-grid.two-cols {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .report-info-grid.three-cols {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+
+    .report-recommendations-grid,
+    .report-footer-signature {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .report-info-card,
+    .report-result-card,
+    .report-notes-box,
+    .report-recommendation-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .report-info-card {
+        padding: 14px !important;
+        min-height: auto !important;
+    }
+
+    .report-result-card {
+        padding: 16px !important;
+    }
+
+    .report-result-topline h3 {
+        font-size: 18px !important;
+    }
+
+    .report-result-meta strong {
+        font-size: 17px !important;
+    }
+
+    .report-result-meta span,
+    .report-info-card span,
+    .report-sign-box span,
+    .report-notes-box li,
+    .report-notes-box p,
+    .report-recommendation-card li,
+    .report-recommendation-card p {
+        font-size: 12px !important;
+    }
+
+    .report-info-card strong,
+    .report-sign-box strong {
+        font-size: 15px !important;
+    }
+
+    .report-sign-box p {
+        font-size: 12px !important;
+    }
+
+    .report-result-icon img {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    .report-actions,
+    .lab-report-back-btn,
+    .no-print {
+        display: none !important;
+    }
+}
