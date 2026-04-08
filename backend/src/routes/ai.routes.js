@@ -1,7 +1,11 @@
 const router = require("express").Router();
-const { analyzeSymptoms } = require("../controllers/ai.controller");
+const {
+    analyzeSymptoms,
+    getPreTestInstructions,
+} = require("../controllers/ai.controller");
 
 router.post("/analyze-symptoms", analyzeSymptoms);
+router.post("/pre-test-instructions", getPreTestInstructions);
 
 router.get("/ping-openai", async (req, res) => {
     try {

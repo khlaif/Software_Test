@@ -2,13 +2,13 @@ import React from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import "./LabReportView.css";
 
-import fileicon from "../../../assets/file-text_w.svg"
-import usericon from "../../../assets/user_blue.svg"
-import calendericon from "../../../assets/calendar_blue.svg"
-import alerticon from "../../../assets/triangle-alert.svg"
-import checkicon from "../../../assets/check_b.svg"
-import lefticon from "../../../assets/arrow-left.svg"
-import recomandationicon from "../../../assets/briefcase.svg"
+import fileicon from "../../../assets/file-text_w.svg";
+import usericon from "../../../assets/user_blue.svg";
+import calendericon from "../../../assets/calendar_blue.svg";
+import alerticon from "../../../assets/triangle-alert.svg";
+import checkicon from "../../../assets/check_b.svg";
+import lefticon from "../../../assets/arrow-left.svg";
+import recomandationicon from "../../../assets/briefcase.svg";
 
 const mockReports = {
     1: {
@@ -147,7 +147,8 @@ const LabReportView = () => {
                     <p>لم يتم العثور على تقرير مطابق لهذا المعرف.</p>
                     <button onClick={() => navigate("/doctor")}>
                         <img src={lefticon} alt="" />
-                        العودة</button>
+                        العودة
+                    </button>
                 </div>
             </div>
         );

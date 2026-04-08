@@ -1,0 +1,318 @@
+.resource-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 24px;
+}
+
+.resource-modal-card {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    background: #f8fafc;
+    border: 1px solid #dbe3ef;
+    border-radius: 28px;
+    box-shadow: 0 30px 80px rgba(15, 23, 42, 0.18);
+    padding: 30px 28px 26px;
+    transform-origin: center;
+}
+
+.resource-modal-overlay.opening {
+    animation: overlayFadeIn 0.28s ease forwards;
+}
+
+.resource-modal-overlay.closing {
+    animation: overlayFadeOut 0.28s ease forwards;
+}
+
+.resource-modal-card.opening {
+    animation: modalPopIn 0.3s ease forwards;
+}
+
+.resource-modal-card.closing {
+    animation: modalPopOut 0.28s ease forwards;
+}
+
+.resource-modal-close {
+    position: absolute;
+    top: -13px;
+    left: 2px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: #64748b;
+    font-size: 28px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.resource-submit-btn:focus,
+.resource-modal-close:focus {
+    outline: none;
+}
+
+.resource-modal-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.resource-modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: #071739;
+    line-height: 1.4;
+}
+
+.resource-modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.resource-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.resource-form-group label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.resource-form-group input,
+.resource-form-group select {
+    width: 100%;
+    height: 66px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 7px rgba(218, 212, 212, 0.9);
+    background: #ffffff;
+    padding: 0 20px;
+    font-size: 1rem;
+    color: #0f172a;
+    outline: none;
+    transition: 0.2s ease;
+    box-sizing: border-box;
+}
+
+.resource-form-group input::placeholder {
+    color: #94a3b8;
+}
+
+.resource-form-group input:focus,
+.resource-form-group select:focus {
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.resource-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: end;
+}
+
+.resource-submit-btn {
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 20px;
+    background: #071739;
+    color: #ffffff;
+    font-size: 1.45rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.25s ease;
+    margin-top: 8px;
+}
+
+.resource-submit-btn:hover {
+    transform: translateY(-1px);
+    background: #0b1f4d;
+}
+
+/* custom priority select */
+.priority-select {
+    position: relative;
+    width: 100%;
+}
+
+.priority-select-trigger {
+    width: 100%;
+    height: 66px;
+    border: none;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 4px 7px rgba(218, 212, 212, 0.9);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    color: #0f172a;
+    cursor: pointer;
+    transition: 0.2s ease;
+    box-sizing: border-box;
+}
+
+.priority-select-trigger.open,
+.priority-select-trigger:focus {
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+    outline: none;
+}
+
+.priority-arrow {
+    font-size: 16px;
+    color: #64748b;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.priority-select-trigger.open .priority-arrow {
+    transform: rotate(180deg);
+}
+
+.priority-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 18px 35px rgba(15, 23, 42, 0.14);
+    z-index: 1000;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    animation: dropdownFadeIn 0.2s ease;
+}
+
+.priority-option {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    color: #0f172a;
+    cursor: pointer;
+    text-align: right;
+    transition: background 0.2s ease;
+    font-family: inherit;
+}
+
+.priority-option:focus {
+    outline: none;
+    background: #f1f5f9;
+}
+
+.priority-option:hover {
+    background: #f8fafc;
+}
+
+.priority-option.selected {
+    font-weight: 700;
+}
+
+.check-mark {
+    font-size: 16px;
+    color: #071739;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+@keyframes overlayFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes overlayFadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes modalPopIn {
+    0% {
+        opacity: 0;
+        transform: translateY(24px) scale(0.94);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-4px) scale(1.01);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes modalPopOut {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(18px) scale(0.96);
+    }
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 640px) {
+    .resource-modal-overlay {
+        padding: 16px;
+    }
+
+    .resource-modal-card {
+        padding: 24px 18px 20px;
+        border-radius: 22px;
+    }
+
+    .resource-modal-header h2 {
+        font-size: 1.45rem;
+    }
+
+    .resource-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .resource-form-group input,
+    .resource-form-group select,
+    .priority-select-trigger,
+    .resource-submit-btn {
+        height: 58px;
+    }
+
+    .priority-option {
+        padding: 12px 16px;
+    }
+}

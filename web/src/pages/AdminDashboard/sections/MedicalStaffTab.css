@@ -1,0 +1,294 @@
+.medical-staff-tab {
+    width: 100%;
+    min-height: 100%;
+    padding: 0;
+    direction: rtl;
+    font-family: "Cairo", "IBM Plex Sans Arabic", sans-serif;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.medical-staff-page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 15px;
+}
+
+.medical-staff-page-title-wrap h1 {
+    margin: 0 0 4px;
+    font-size: 30px;
+    line-height: 1.1;
+    font-weight: 900;
+    color: #0f172a;
+}
+
+.medical-staff-page-title-wrap p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #64748b;
+}
+
+
+.medical-staff-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    margin-bottom: 28px;
+}
+
+.medical-staff-stat-card {
+    height: 100px;
+    border: none;
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 24px 24px;
+    box-shadow: 0 4px 7px rgb(230, 218, 218);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+.medical-staff-stat-text h3 {
+    margin: 0 0 5px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #64748b;
+}
+
+.medical-staff-stat-text strong {
+    display: block;
+    font-size: 26px;
+    line-height: 1.1;
+    font-weight: 900;
+    color: #020617;
+}
+
+.medical-staff-stat-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    flex-shrink: 0;
+}
+
+.medical-staff-stat-icon.blue {
+    background: #e8f0ff;
+}
+
+.medical-staff-stat-icon.green {
+    background: #e8f7ec;
+}
+
+.medical-staff-stat-icon.amber {
+    background: #fff3df;
+}
+
+.medical-staff-stat-icon.purple {
+    background: #f3e8ff;
+}
+
+.medical-staff-stat-icon.green img {
+    filter: brightness(0) saturate(100%) invert(45%) sepia(95%) saturate(1258%) hue-rotate(103deg) brightness(95%) contrast(94%);
+}
+
+.medical-staff-stat-icon.amber img {
+    filter: brightness(0) saturate(100%) invert(68%) sepia(78%) saturate(1036%) hue-rotate(351deg) brightness(99%) contrast(93%);
+}
+
+.medical-staff-stat-icon.purple img {
+    filter: brightness(0) saturate(100%) invert(23%) sepia(58%) saturate(1867%) hue-rotate(252deg) brightness(95%) contrast(98%);
+}
+
+.medical-staff-table-card {
+    background: #ffffff;
+    border-radius: 34px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
+
+.medical-staff-table-header > div {
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: #64748b;
+    text-align: right;
+}
+
+.medical-staff-table-header > div:first-child {
+    text-align: right;
+}
+
+.medical-staff-table-body {
+    width: 100%;
+}
+
+.medical-staff-table-row,
+.medical-staff-table-header {
+    display: grid;
+    grid-template-columns: 2fr 1.3fr 1.2fr 1.2fr 1fr;
+    align-items: center;
+    padding: 26px 40px;
+    border-bottom: 1px solid #e2e8f0;
+    background: #ffffff;
+}
+
+.medical-staff-table-row:last-child {
+    border-bottom: none;
+}
+
+.doctor-main-cell {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+.doctor-avatar-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: #edf2ff;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 900;
+}
+
+.doctor-avatar-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doctor-name-wrap h4 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.3;
+    font-weight: 800;
+    color: #020617;
+}
+
+.doctor-specialty-cell,
+.doctor-status-cell,
+.doctor-patients-cell,
+.doctor-priority-cell {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.doctor-specialty-cell span {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+    color: #64748b;
+}
+
+.doctor-patients-cell strong {
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 900;
+    color: #020617;
+}
+
+.staff-mini-badge {
+    min-height: 30px;
+    padding: 0 12px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.staff-mini-badge.success {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.staff-mini-badge.warning {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.staff-mini-badge.danger {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.staff-mini-badge.info {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.staff-mini-badge.neutral {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+.intervention-badge {
+    min-height: 30px;
+    padding: 0 16px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.intervention-badge.warning {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.intervention-badge.neutral {
+    background: transparent;
+    color: #94a3b8;
+}
+
+@media (max-width: 1400px) {
+    .medical-staff-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1100px) {
+    .medical-staff-page-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .medical-staff-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .medical-staff-table-card {
+        overflow-x: auto;
+    }
+
+    .medical-staff-table-header,
+    .medical-staff-table-row {
+        min-width: 980px;
+    }
+}

@@ -1,0 +1,231 @@
+.financial-reports-tab {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    direction: rtl;
+    box-sizing: border-box;
+
+}
+
+.financial-reports-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 1px;
+}
+
+.financial-reports-heading h1 {
+    margin: 0;
+    font-size: 34px;
+    line-height: 44px;
+    font-weight: 800;
+    color: #07183d;
+    letter-spacing: 0;
+}
+
+.financial-reports-heading p {
+    margin: 4px 0 0;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #6f8199;
+}
+
+.financial-summary-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.financial-summary-card {
+    min-height: 164px;
+    background: #ffffff;
+    border-radius: 32px;
+    padding: 26px 28px 22px;
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.summary-card-title-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.summary-card-title-wrap h3 {
+    margin: 0;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 700;
+    color: #6d7f99;
+    text-align: right;
+}
+
+.summary-card-value {
+    width: 100%;
+    text-align: right;
+    font-size: 42px;
+    line-height: 46px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.summary-card-value.success {
+    color: #0ba83e;
+}
+
+.summary-card-value.danger {
+    color: #ff3636;
+}
+
+.summary-card-value.primary {
+    color: #2962ff;
+}
+
+.summary-card-foot {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.summary-card-foot.single-line {
+    gap: 0;
+}
+
+.summary-card-foot.success {
+    color: #0ba83e;
+}
+
+.summary-card-foot.danger {
+    color: #ff3636;
+}
+
+.summary-card-foot.neutral {
+    color: #6f8199;
+}
+
+.summary-change-text {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.summary-change-label {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.summary-secondary-text {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.summary-change-arrow {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.financial-main-panel {
+    width: 100%;
+    min-height: 455px;
+    background: #ffffff;
+    border-radius: 40px;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.financial-chart-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.financial-chart-icon-slot {
+    width: 86px;
+    height: 86px;
+    border-radius: 24px;
+    margin-bottom: 2px;
+}
+
+.financial-chart-center h2 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 800;
+    color: #9cafc8;
+}
+
+.financial-chart-center p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 500;
+    color: #9cafc8;
+}
+
+@media (max-width: 1200px) {
+    .financial-summary-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .financial-reports-tab {
+        gap: 22px;
+    }
+
+    .financial-reports-heading h1 {
+        font-size: 26px;
+        line-height: 34px;
+    }
+
+    .financial-reports-heading p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .financial-summary-card {
+        min-height: 150px;
+        border-radius: 26px;
+        padding: 22px 20px 20px;
+    }
+
+    .summary-card-title-wrap h3 {
+        font-size: 15px;
+    }
+
+    .summary-card-value {
+        font-size: 34px;
+        line-height: 38px;
+    }
+
+    .financial-main-panel {
+        min-height: 320px;
+        border-radius: 28px;
+        padding: 24px;
+    }
+
+    .financial-chart-center h2 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+}

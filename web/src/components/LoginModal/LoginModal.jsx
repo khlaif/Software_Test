@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"; // ✅
+import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Select from "react-select";
@@ -12,7 +12,7 @@ import adminIcom from "../../assets/user-star.svg";
 import shieldIcon from "../../assets/shield-check.svg";
 
 export default function LoginModal({ open, onClose }) {
-    const navigate = useNavigate(); // ✅
+    const navigate = useNavigate();
 
     const [tab, setTab] = useState("login");
     const [birthDate, setBirthDate] = useState(null);

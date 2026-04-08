@@ -10,6 +10,8 @@ import HealthRecord from "./pages/PatientDashboard/health-record/health-record";
 import DoctorDashboard from "./pages/DoctorDashboard/DoctorDashboard";
 import VideoCallDoctor from "./pages/DoctorDashboard/sections/ConsultationSession"
 import LabReportView from "./pages/DoctorDashboard/sections/LabReportView"
+import AdminDashboard from "./pages/AdminDashboard/AdminDashboard";
+import BillingPage from "./pages/PatientDashboard/Billing/BillingPage";
 
 function App() {
   return (
@@ -23,9 +25,11 @@ function App() {
         <Route path="/telemed" element={<Telemedicine />} />
         <Route path="/scheduling" element={<Schedul />} />
         <Route path="/health-record" element={<HealthRecord />} /> 
+        <Route path="/billing" element={<BillingPage />} />
         <Route path="/doctor" element={<DoctorDashboard />} />
         <Route path="/video-call-doctor" element={<VideoCallDoctor />} />
-        <Route path="/lab-report/:id" element={<LabReportView />} />
+        <Route path="/doctor/lab-report/:id" element={<LabReportView />} />
+        <Route path="/admin" element={<AdminDashboard/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -9,7 +9,7 @@ import brainicon from "../../assets/brain-circuit.svg";
 import clockicon from "../../assets/clock_w.svg";
 import alerticon from "../../assets/shield-alert.svg";
 import historyicon from "../../assets/history.svg";
-import alertredicon from "../../assets/triangle-alert_r.svg"
+import alertredicon from "../../assets/triangle-alert_r.svg";
 
 import ConsultationTab from "./sections/ConsultationTab";
 import ConsultationSession from "./sections/ConsultationSession";
@@ -23,210 +23,210 @@ const DoctorDashboard = () => {
 	const [selectedConsultation, setSelectedConsultation] = useState(null);
 	const [showMedicalHistory, setShowMedicalHistory] = useState(false);
 	const [showEndVisitModal, setShowEndVisitModal] = useState(false);
+	const [showLogoutModal, setShowLogoutModal] = useState(false);
 
-	const initialPatients = 
-    [
-        {
-            id: 1,
-            name: "سارة محمد",
-            age: 45,
-            gender: "أنثى",
-            recordNumber: "1294/4#",
-            status: "حالة حرجة",
-            statusType: "danger",
-            condition: "ضيق تنفس حاد",
-            badge: "حالة طارئة",
-            badgeType: "danger",
-            waitTime: "5m",
-            isCompleted: false,
+	const initialPatients = [
+		{
+			id: 1,
+			name: "سارة محمد",
+			age: 45,
+			gender: "أنثى",
+			recordNumber: "1294/4#",
+			status: "حالة حرجة",
+			statusType: "danger",
+			condition: "ضيق تنفس حاد",
+			badge: "حالة طارئة",
+			badgeType: "danger",
+			waitTime: "5m",
+			isCompleted: false,
 
-            vitals: [
-                { id: 1, label: "ضغط الدم", value: "140/90", type: "danger" },
-                { id: 2, label: "النبض", value: "bpm 110", type: "danger" },
-                { id: 3, label: "الأكسجين", value: "92%", type: "warning" },
-                { id: 4, label: "الحرارة", value: "37.2°C", type: "success" },
-            ],
+			vitals: [
+				{ id: 1, label: "ضغط الدم", value: "140/90", type: "danger" },
+				{ id: 2, label: "النبض", value: "bpm 110", type: "danger" },
+				{ id: 3, label: "الأكسجين", value: "92%", type: "warning" },
+				{ id: 4, label: "الحرارة", value: "37.2°C", type: "success" },
+			],
 
-            aiRecommendations: {
-                risk: {
-                    title: "قصور تنفسي",
-                    percentage: 85,
-                },
-                urgentTests: ["غازات الدم الشرياني", "تصوير مقطعي (CT)"],
-            },
+			aiRecommendations: {
+				risk: {
+					title: "قصور تنفسي",
+					percentage: 85,
+				},
+				urgentTests: ["غازات الدم الشرياني", "تصوير مقطعي (CT)"],
+			},
 
-            labResults: [
-                {
-                    id: 1,
-                    testName: "تخطيط القلب (ECG)",
-                    resultValue: "ST-Elevation",
-                    status: "مكتمل",
-                    statusType: "completed",
-                    resultType: "critical",
-                    reportLabel: "عرض التقرير",
-                },
-                {
-                    id: 2,
-                    testName: "إنزيمات القلب",
-                    resultValue: "--",
-                    status: "قيد الانتظار",
-                    statusType: "pending",
-                    resultType: "pending",
-                    reportLabel: "عرض التقرير",
-                },
-            ],
+			labResults: [
+				{
+					id: 1,
+					testName: "تخطيط القلب (ECG)",
+					resultValue: "ST-Elevation",
+					status: "مكتمل",
+					statusType: "completed",
+					resultType: "critical",
+					reportLabel: "عرض التقرير",
+				},
+				{
+					id: 2,
+					testName: "إنزيمات القلب",
+					resultValue: "--",
+					status: "قيد الانتظار",
+					statusType: "pending",
+					resultType: "pending",
+					reportLabel: "عرض التقرير",
+				},
+			],
 
-            medicalHistory: {
-                lastVisit: "12 يناير 2026",
-                surgeriesCount: "2 عمليات سابقة",
-                timeline: [
-                    {
-                        id: 1,
-                        title: "عملية قسطرة قلبية",
-                        date: "2025-11-20",
-                        hospital: "مستشفى النجاح",
-                    },
-                    {
-                        id: 2,
-                        title: "فحص دوري شامل",
-                        date: "2025-05-15",
-                        hospital: "مستشفى المقاصد",
-                    },
-                ],
-            },
-        },
-        {
-            id: 2,
-            name: "ياسين علي",
-            age: 37,
-            gender: "ذكر",
-            recordNumber: "2231/7#",
-            status: "قيد المراجعة",
-            statusType: "review",
-            condition: "ألم في البطن",
-            badge: "بانتظار الفحوصات",
-            badgeType: "muted",
-            waitTime: "20m",
-            isCompleted: false,
+			medicalHistory: {
+				lastVisit: "12 يناير 2026",
+				surgeriesCount: "2 عمليات سابقة",
+				timeline: [
+					{
+						id: 1,
+						title: "عملية قسطرة قلبية",
+						date: "2025-11-20",
+						hospital: "مستشفى النجاح",
+					},
+					{
+						id: 2,
+						title: "فحص دوري شامل",
+						date: "2025-05-15",
+						hospital: "مستشفى المقاصد",
+					},
+				],
+			},
+		},
+		{
+			id: 2,
+			name: "ياسين علي",
+			age: 37,
+			gender: "ذكر",
+			recordNumber: "2231/7#",
+			status: "قيد المراجعة",
+			statusType: "review",
+			condition: "ألم في البطن",
+			badge: "بانتظار الفحوصات",
+			badgeType: "muted",
+			waitTime: "20m",
+			isCompleted: false,
 
-            vitals: [
-                { id: 1, label: "ضغط الدم", value: "125/82", type: "normal" },
-                { id: 2, label: "النبض", value: "bpm 84", type: "normal" },
-                { id: 3, label: "الأكسجين", value: "98%", type: "success" },
-                { id: 4, label: "الحرارة", value: "36.9°C", type: "success" },
-            ],
+			vitals: [
+				{ id: 1, label: "ضغط الدم", value: "125/82", type: "normal" },
+				{ id: 2, label: "النبض", value: "bpm 84", type: "normal" },
+				{ id: 3, label: "الأكسجين", value: "98%", type: "success" },
+				{ id: 4, label: "الحرارة", value: "36.9°C", type: "success" },
+			],
 
-            aiRecommendations: {
-                risk: {
-                    title: "اشتباه التهاب زائدة",
-                    percentage: 62,
-                },
-                urgentTests: ["تحليل CBC", "تصوير Ultrasound"],
-            },
+			aiRecommendations: {
+				risk: {
+					title: "اشتباه التهاب زائدة",
+					percentage: 62,
+				},
+				urgentTests: ["تحليل CBC", "تصوير Ultrasound"],
+			},
 
-            labResults: [
-                {
-                    id: 1,
-                    testName: "CBC",
-                    resultValue: "WBC مرتفع",
-                    status: "مكتمل",
-                    statusType: "completed",
-                    resultType: "warning",
-                    reportLabel: "عرض التقرير",
-                },
-                {
-                    id: 2,
-                    testName: "CRP",
-                    resultValue: "--",
-                    status: "قيد الانتظار",
-                    statusType: "pending",
-                    resultType: "pending",
-                    reportLabel: "عرض التقرير",
-                },
-            ],
+			labResults: [
+				{
+					id: 1,
+					testName: "CBC",
+					resultValue: "WBC مرتفع",
+					status: "مكتمل",
+					statusType: "completed",
+					resultType: "warning",
+					reportLabel: "عرض التقرير",
+				},
+				{
+					id: 2,
+					testName: "CRP",
+					resultValue: "--",
+					status: "قيد الانتظار",
+					statusType: "pending",
+					resultType: "pending",
+					reportLabel: "عرض التقرير",
+				},
+			],
 
-            medicalHistory: {
-                lastVisit: "03 فبراير 2026",
-                surgeriesCount: "لا يوجد",
-                timeline: [
-                    {
-                        id: 1,
-                        title: "مراجعة ألم بطني سابق",
-                        date: "2026-02-03",
-                        hospital: "مستشفى النجاح",
-                    },
-                ],
-            },
-        },
-        {
-            id: 3,
-            name: "ليلى حسن",
-            age: 29,
-            gender: "أنثى",
-            recordNumber: "7782/3#",
-            status: "جاهزة للمراجعة",
-            statusType: "ready",
-            condition: "متابعة دورية",
-            badge: "جاهزة للمراجعة",
-            badgeType: "light",
-            waitTime: "1h",
-            isCompleted: false,
+			medicalHistory: {
+				lastVisit: "03 فبراير 2026",
+				surgeriesCount: "لا يوجد",
+				timeline: [
+					{
+						id: 1,
+						title: "مراجعة ألم بطني سابق",
+						date: "2026-02-03",
+						hospital: "مستشفى النجاح",
+					},
+				],
+			},
+		},
+		{
+			id: 3,
+			name: "ليلى حسن",
+			age: 29,
+			gender: "أنثى",
+			recordNumber: "7782/3#",
+			status: "جاهزة للمراجعة",
+			statusType: "ready",
+			condition: "متابعة دورية",
+			badge: "جاهزة للمراجعة",
+			badgeType: "light",
+			waitTime: "1h",
+			isCompleted: false,
 
-            vitals: [
-                { id: 1, label: "ضغط الدم", value: "118/76", type: "success" },
-                { id: 2, label: "النبض", value: "bpm 72", type: "success" },
-                { id: 3, label: "الأكسجين", value: "99%", type: "success" },
-                { id: 4, label: "الحرارة", value: "36.7°C", type: "success" },
-            ],
+			vitals: [
+				{ id: 1, label: "ضغط الدم", value: "118/76", type: "success" },
+				{ id: 2, label: "النبض", value: "bpm 72", type: "success" },
+				{ id: 3, label: "الأكسجين", value: "99%", type: "success" },
+				{ id: 4, label: "الحرارة", value: "36.7°C", type: "success" },
+			],
 
-            aiRecommendations: {
-                risk: {
-                    title: "استقرار عام",
-                    percentage: 18,
-                },
-                urgentTests: ["لا توجد فحوصات عاجلة"],
-            },
+			aiRecommendations: {
+				risk: {
+					title: "استقرار عام",
+					percentage: 18,
+				},
+				urgentTests: ["لا توجد فحوصات عاجلة"],
+			},
 
-            labResults: [
-                {
-                    id: 1,
-                    testName: "سكر صائم",
-                    resultValue: "طبيعي",
-                    status: "مكتمل",
-                    statusType: "completed",
-                    resultType: "normal",
-                    reportLabel: "عرض التقرير",
-                },
-            ],
+			labResults: [
+				{
+					id: 1,
+					testName: "سكر صائم",
+					resultValue: "طبيعي",
+					status: "مكتمل",
+					statusType: "completed",
+					resultType: "normal",
+					reportLabel: "عرض التقرير",
+				},
+			],
 
-            medicalHistory: {
-                lastVisit: "20 ديسمبر 2025",
-                surgeriesCount: "1 عملية سابقة",
-                timeline: [
-                    {
-                        id: 1,
-                        title: "متابعة دورية",
-                        date: "2025-12-20",
-                        hospital: "المستشفى العربي التخصصي",
-                    },
-                ],
-            },
-        },
-    ];
+			medicalHistory: {
+				lastVisit: "20 ديسمبر 2025",
+				surgeriesCount: "1 عملية سابقة",
+				timeline: [
+					{
+						id: 1,
+						title: "متابعة دورية",
+						date: "2025-12-20",
+						hospital: "المستشفى العربي التخصصي",
+					},
+				],
+			},
+		},
+	];
 
 	const [waitingPatients, setWaitingPatients] = useState(initialPatients);
 	const [currentPatient, setCurrentPatient] = useState(initialPatients[0] || null);
-    const patientVitals = currentPatient?.vitals || [];
-    const patientAiRisk = currentPatient?.aiRecommendations?.risk || null;
-    const patientUrgentTests = currentPatient?.aiRecommendations?.urgentTests || [];
-    const patientLabResults = currentPatient?.labResults || [];
-    const patientMedicalHistory = currentPatient?.medicalHistory || null;
 
+	const patientVitals = currentPatient?.vitals || [];
+	const patientAiRisk = currentPatient?.aiRecommendations?.risk || null;
+	const patientUrgentTests = currentPatient?.aiRecommendations?.urgentTests || [];
+	const patientLabResults = currentPatient?.labResults || [];
+	const patientMedicalHistory = currentPatient?.medicalHistory || null;
 
 	useEffect(() => {
 		const originalOverflow = document.body.style.overflow;
 
-		if (showMedicalHistory || showEndVisitModal) {
+		if (showMedicalHistory || showEndVisitModal || showLogoutModal) {
 			document.body.style.overflow = "hidden";
 		} else {
 			document.body.style.overflow = originalOverflow;
@@ -235,8 +235,7 @@ const DoctorDashboard = () => {
 		return () => {
 			document.body.style.overflow = originalOverflow;
 		};
-	}, [showMedicalHistory, showEndVisitModal]);
-
+	}, [showMedicalHistory, showEndVisitModal, showLogoutModal]);
 
 	const tabs = [
 		{ id: "lab", label: "النتائج المخبرية" },
@@ -285,8 +284,7 @@ const DoctorDashboard = () => {
 	];
 
 	const filteredPatients = waitingPatients.filter(
-		(item) =>
-			item.name.includes(searchTerm) || item.condition.includes(searchTerm)
+		(item) => item.name.includes(searchTerm) || item.condition.includes(searchTerm)
 	);
 
 	const handleStartConsultation = (consultation) => {
@@ -309,11 +307,11 @@ const DoctorDashboard = () => {
 				? {
 						...item,
 						status: "تمت المعاينة",
-                        statusType: "completed",
-                        badge: "تمت المعاينة",
-                        badgeType: "completed",
-                        isCompleted: true,
-				}
+						statusType: "completed",
+						badge: "تمت المعاينة",
+						badgeType: "completed",
+						isCompleted: true,
+				  }
 				: item
 		);
 
@@ -328,6 +326,24 @@ const DoctorDashboard = () => {
 		setWaitingPatients(sortedPatients);
 		setCurrentPatient(nextActivePatient);
 		setShowEndVisitModal(false);
+	};
+
+	const handleConfirmLogout = () => {
+		localStorage.removeItem("doctorName");
+		localStorage.removeItem("doctorPassword");
+		sessionStorage.removeItem("doctorName");
+		sessionStorage.removeItem("doctorPassword");
+
+		// إذا كنت تخزن بيانات إضافية للدكتور احذفها هنا أيضًا
+		localStorage.removeItem("doctorEmail");
+		localStorage.removeItem("doctorData");
+		sessionStorage.removeItem("doctorEmail");
+		sessionStorage.removeItem("doctorData");
+
+		setShowLogoutModal(false);
+
+		// إعادة التوجيه لصفحة تسجيل الدخول
+		window.location.href = "/";
 	};
 
 	const renderActiveTab = () => {
@@ -349,8 +365,8 @@ const DoctorDashboard = () => {
 		}
 
 		if (activeTab === "lab") {
-            return <LabResultsTab labResultsData={patientLabResults} />;
-        }
+			return <LabResultsTab labResultsData={patientLabResults} />;
+		}
 
 		return (
 			<div className="tab-placeholder">
@@ -373,8 +389,12 @@ const DoctorDashboard = () => {
 		<div className="doctor-dashboard" dir="rtl">
 			<aside className="doctor-sidebar">
 				<div className="brand-box">
-					<div className="icon-header">
-						<img src={doctoricon} alt="" />
+					<div
+						className="icon-header"
+						onClick={() => setShowLogoutModal(true)}
+						style={{ cursor: "pointer" }}
+					>
+						<img src={doctoricon} alt="logout trigger" />
 					</div>
 
 					<div className="brand-text">
@@ -437,9 +457,13 @@ const DoctorDashboard = () => {
 							<h1>
 								{currentPatient?.name || "لا يوجد مريض حالي"}
 								{currentPatient?.status && (
-                                    <span className={`status-chip ${currentPatient?.statusType || "default"}`}>
-                                        {currentPatient?.status}
-                                    </span>
+									<span
+										className={`status-chip ${
+											currentPatient?.statusType || "default"
+										}`}
+									>
+										{currentPatient?.status}
+									</span>
 								)}
 							</h1>
 
@@ -494,8 +518,12 @@ const DoctorDashboard = () => {
 										</div>
 
 										<div className="risk-row">
-                                            <span className="risk-title">{patientAiRisk?.title || "لا توجد بيانات"}</span>
-                                            <span className="risk-percentage">{patientAiRisk?.percentage || 0}%</span>
+											<span className="risk-title">
+												{patientAiRisk?.title || "لا توجد بيانات"}
+											</span>
+											<span className="risk-percentage">
+												{patientAiRisk?.percentage || 0}%
+											</span>
 										</div>
 
 										<div className="progress-bar">
@@ -514,8 +542,8 @@ const DoctorDashboard = () => {
 
 										<ul>
 											{patientUrgentTests.map((test, index) => (
-                                                <li key={index}>{test}</li>
-                                            ))}
+												<li key={index}>{test}</li>
+											))}
 										</ul>
 									</div>
 								</div>
@@ -523,27 +551,28 @@ const DoctorDashboard = () => {
 
 							<div className="vitals-card">
 								<h2>المؤشرات الحيوية</h2>
-                                <div className="vitals-legend">
-                                    <div className="legend-item">
-                                        <span className="legend-dot danger"></span>
-                                        <span>خطر مرتفع</span>
-                                    </div>
 
-                                    <div className="legend-item">
-                                        <span className="legend-dot warning"></span>
-                                        <span>يحتاج متابعة</span>
-                                    </div>
+								<div className="vitals-legend">
+									<div className="legend-item">
+										<span className="legend-dot danger"></span>
+										<span>خطر مرتفع</span>
+									</div>
 
-                                    <div className="legend-item">
-                                        <span className="legend-dot success"></span>
-                                        <span>مستقر</span>
-                                    </div>
+									<div className="legend-item">
+										<span className="legend-dot warning"></span>
+										<span>يحتاج متابعة</span>
+									</div>
 
-                                    <div className="legend-item">
-                                        <span className="legend-dot normal"></span>
-                                        <span>طبيعي</span>
-                                    </div>
-                                </div>
+									<div className="legend-item">
+										<span className="legend-dot success"></span>
+										<span>مستقر</span>
+									</div>
+
+									<div className="legend-item">
+										<span className="legend-dot normal"></span>
+										<span>طبيعي</span>
+									</div>
+								</div>
 
 								<div className="vitals-list">
 									{patientVitals.map((item) => (
@@ -654,8 +683,8 @@ const DoctorDashboard = () => {
 
 						<div className="end-visit-icon-wrap">
 							<div className="end-visit-icon">
-                                <img src={alertredicon} alt="" />
-                            </div>
+								<img src={alertredicon} alt="" />
+							</div>
 						</div>
 
 						<h2>تأكيد إنهاء العملية</h2>
@@ -666,10 +695,7 @@ const DoctorDashboard = () => {
 						</p>
 
 						<div className="end-visit-actions">
-							<button
-								className="btn btn-danger"
-								onClick={handleConfirmEndVisit}
-							>
+							<button className="btn btn-danger" onClick={handleConfirmEndVisit}>
 								تأكيد الإغلاق
 							</button>
 
@@ -678,6 +704,48 @@ const DoctorDashboard = () => {
 								onClick={() => setShowEndVisitModal(false)}
 							>
 								إلغاء
+							</button>
+						</div>
+					</div>
+				</div>
+			)}
+
+			{showLogoutModal && (
+				<div
+					className="medical-history-overlay"
+					onClick={() => setShowLogoutModal(false)}
+				>
+					<div
+						className="end-visit-modal"
+						onClick={(e) => e.stopPropagation()}
+					>
+						<button
+							className="medical-history-close"
+							onClick={() => setShowLogoutModal(false)}
+						>
+							×
+						</button>
+
+						<div className="end-visit-icon-wrap">
+							<div className="end-visit-icon">
+								<img src={alertredicon} alt="" />
+							</div>
+						</div>
+
+						<h2>تأكيد تسجيل الخروج</h2>
+
+						<p>هل أنت متأكد من تسجيل الخروج؟</p>
+
+						<div className="end-visit-actions">
+							<button className="btn btn-danger" onClick={handleConfirmLogout}>
+								نعم
+							</button>
+
+							<button
+								className="btn btn-outline"
+								onClick={() => setShowLogoutModal(false)}
+							>
+								لا
 							</button>
 						</div>
 					</div>
